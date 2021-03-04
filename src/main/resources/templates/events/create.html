@@ -5,9 +5,19 @@
 
 <header th:replace="fragments :: header"></header>
 
+
+
+
 <form method="post">
-    <input type="text" name="name" value="Event Name">
-    <input type="text" name="description" value="Event Description">
+    <label for="name">Event Name</label>
+    <input th:field="${event.name}" id="name">
+    <p class="error" th:errors="${event.name}"></p><br>
+    <label for="description">Description</label>
+    <input th:field="${event.description}" id="description"><br>
+    <p class="error" th:errors="${event.description}"></p>
+    <label for="contactEmail">Contact Email</label>
+    <input th:field="${event.contactEmail}" id="contactEmail"><br>
+    <p class="error" th:errors="${event.contactEmail}"></p>
     <input type="submit" value="Create">
 </form>
 
